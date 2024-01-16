@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
 )
 
 // GetClusterNodes returns information about all the nodes participating in the cluster

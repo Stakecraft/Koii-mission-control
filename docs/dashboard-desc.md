@@ -2,7 +2,7 @@
 
 Monitoring is provided via three customized Grafana dashboards.  The dashboards provide consolidated, user-friendly, yet comprehensive views of a validator infrastucture's health.
 
-Scroll past the dashboard descriptions to find a demo system link to see Solana Monitoring Tool in action 👇
+Scroll past the dashboard descriptions to find a demo system link to see Koii Monitoring Tool in action 👇
 
 
 ### 1. Validator monitoring metricss
@@ -17,9 +17,9 @@ The following list of metrics are displayed in this dashboard.
 
 - **Validator Information**
 
-    *Node Version*: Current version of the solana node.
+    *Node Version*: Current version of the Koii node.
 
-    *Node health*: Current health of the solana node, if it is running fine, then it marked as **UP** or else marked as **DOWN**.
+    *Node health*: Current health of the Koii node, if it is running fine, then it marked as **UP** or else marked as **DOWN**.
 
     *Validator Active stake*: Displays the stake, delegated to the vote account and active in the current epoch.
 
@@ -101,7 +101,7 @@ The following list of metrics are displayed in this dashboard.
 
 - **Extra Information**
 
-    *Solana Slot Leader*: Display slot leader for current slot.
+    *Koii Slot Leader*: Display slot leader for current slot.
 
     *Delinquent validators*: Displays the number of delinquent validators, i.e validators who are not active. 
 

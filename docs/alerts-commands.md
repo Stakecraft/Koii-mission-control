@@ -10,7 +10,7 @@
  - Alert if validator skip rate exceedes network skip rate and difference of both exceedes **skip_rate_threshold** which is user configured in *config.toml* .
 
 ## Telegram Commands
-These commands can be used to get quick information about your solana node.
+These commands can be used to get quick information about your koii node.
 
 Here is the list of available Telegram Commands.
   - **/list** - list out the available commands.

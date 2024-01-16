@@ -1,4 +1,4 @@
-module github.com/Chainflow/solana-mission-control
+module github.com/Stakecraft/koii-mission-control
 
 go 1.15
 

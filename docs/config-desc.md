@@ -104,8 +104,8 @@
 
     - *prometheus_address*
 
-      Prometheus address to export solana metrics and serve, by default listening address configured as (http://localhost:1234) in `config.toml` .
+      Prometheus address to export koii metrics and serve, by default listening address configured as (http://localhost:5678) in `config.toml` .
 
     - *listen_address*
        
-      Port in which prometheus server will run,and export metrics on this port, (ex: http://localhost:1234/metrics) shows all the metrics which are stored in prometheus database, by default it will run on 9090 port.
+      Port in which prometheus server will run,and export metrics on this port, (ex: http://localhost:5678/metrics) shows all the metrics which are stored in prometheus database, by default it will run on 9090 port.

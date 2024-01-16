@@ -8,14 +8,14 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/Chainflow/solana-mission-control/alerter"
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/alerter"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 var (
-	solanaBinaryPath = os.Getenv("SOLANA_BINARY_PATH")
+	solanaBinaryPath = os.Getenv("KOII_BINARY_PATH")
 )
 
 func SkipRate(cfg *config.Config) (float64, float64, error) {
@@ -25,12 +25,12 @@ func SkipRate(cfg *config.Config) (float64, float64, error) {
 		solanaBinaryPath = "solana"
 	}
 
-	log.Printf("Solana binary path : %s", solanaBinaryPath)
+	log.Printf("Koii binary path : %s", solanaBinaryPath)
 
 	cmd := exec.Command(solanaBinaryPath, "validators", "--output", "json")
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		log.Printf("Error while running solana validators cli command %v", err)
+		log.Printf("Error while running Koii validators cli command %v", err)
 		return valSkipped, netSkipped, err
 	}
 

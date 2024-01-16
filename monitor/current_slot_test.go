@@ -3,9 +3,9 @@ package monitor_test
 import (
 	"testing"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/monitor"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/monitor"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 func TestValidatorCurrentSlot(t *testing.T) {

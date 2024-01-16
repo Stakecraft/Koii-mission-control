@@ -1,6 +1,6 @@
 [rpc_and_lcd_endpoints]
-rpc_endpoint = "https://api.solana.com"
-network_rpc = "https://api.mainnet-beta.solana.com"
+rpc_endpoint = "http://localhost:10899"
+network_rpc = "http://localhost:10899"
 
 [validator_details]
 validator_name = "val-name"
@@ -39,5 +39,5 @@ account_email = "xyz@domain.com"
 sendgrid_account_name = "xyz"
 
 [prometheus]
-listen_address = ":1234"
+listen_address = ":5678"
 prometheus_address = "http://localhost:9090"

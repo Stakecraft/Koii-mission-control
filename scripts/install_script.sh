@@ -68,7 +68,7 @@ cp prometheus-2.22.1.linux-amd64/prometheus.yml $HOME
 echo "------- Edit prometheus.yml --------------"
 
 echo "
-  - job_name: 'solana'
+  - job_name: 'koii'
 
     static_configs:
     - targets: ['localhost:1234']

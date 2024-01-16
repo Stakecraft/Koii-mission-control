@@ -10,10 +10,10 @@ import (
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/querier"
-	"github.com/Chainflow/solana-mission-control/types"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/querier"
+	"github.com/Stakecraft/koii-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 // TelegramAlerting will check for the commands from the configured telegram account
@@ -112,7 +112,7 @@ func GetStatus(cfg *config.Config) string {
 		log.Printf("Error while getting validator status from db : %v", err)
 	}
 
-	msg = msg + fmt.Sprintf("Solana validator is currently %s\n", status)
+	msg = msg + fmt.Sprintf("Koii validator is currently %s\n", status)
 
 	valHeight, err := GetEpochInfo(cfg, utils.Validator)
 	if err != nil {
@@ -133,15 +133,15 @@ func GetStatus(cfg *config.Config) string {
 func NodeStatus(cfg *config.Config) string {
 	var status string
 
-	nodeHealth, err := GetNodeHealth(cfg) // Get solana node health
+	nodeHealth, err := GetNodeHealth(cfg) // Get Koii node health
 	if err != nil {
 		log.Printf("Error while getting node health : %v", err)
 	}
 
 	if nodeHealth == 1 {
-		status = fmt.Sprintf("- Your Solana validator node is %s \n", "UP")
+		status = fmt.Sprintf("- Your Koii validator node is %s \n", "UP")
 	} else {
-		status = fmt.Sprintf("- Your Solana validator node is %s \n", "DOWN")
+		status = fmt.Sprintf("- Your Koii validator node is %s \n", "DOWN")
 	}
 
 	return status

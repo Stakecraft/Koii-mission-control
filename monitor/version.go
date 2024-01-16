@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
 )
 
-// GetVersion returns the current solana versions running on the node
+// GetVersion returns the current koii versions running on the node
 func GetVersion(cfg *config.Config) (types.Version, error) {
 	ops := types.HTTPOptions{
 		Endpoint: cfg.Endpoints.RPCEndpoint,

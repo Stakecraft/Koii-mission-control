@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
 )
 
 func addQueryParameters(req *http.Request, queryParams types.QueryParams) {

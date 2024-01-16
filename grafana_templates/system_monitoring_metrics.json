@@ -12,7 +12,7 @@
         }
       ]
     },
-    "description": "Node exporter metrics of Validator node on Solana network",
+    "description": "Node exporter metrics of Validator node on Koii network",
     "editable": true,
     "gnetId": 13445,
     "graphTooltip": 0,

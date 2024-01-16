@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 // GetEpochInfo returns information about the current epoch

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/types"
 )
 
 // GetBlockTime returns the estimated production time of a confirmed block

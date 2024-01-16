@@ -3,8 +3,8 @@ package monitor_test
 import (
 	"testing"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/monitor"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/monitor"
 )
 
 func TestClusterNodes(t *testing.T) {

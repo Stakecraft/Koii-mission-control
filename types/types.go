@@ -3,7 +3,7 @@ package types
 import (
 	client "github.com/influxdata/influxdb1-client/v2"
 
-	"github.com/Chainflow/solana-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/config"
 )
 
 type (
@@ -133,7 +133,7 @@ type (
 		} `json:"error"`
 	}
 
-	// Version struct which holds information of solana version
+	// Version struct which holds information of koii version
 	Version struct {
 		// Jsonrpc string `json:"jsonrpc"`
 		Result struct {

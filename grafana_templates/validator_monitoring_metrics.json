@@ -54,7 +54,7 @@
       }
     ]
   },
-  "description": "Provides information about solana validator",
+  "description": "Provides information about Koii validator",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,

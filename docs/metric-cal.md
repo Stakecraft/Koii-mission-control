@@ -10,7 +10,7 @@
 
 - **Validator Information**
 
-    Node Version: Returns the current solana version running on the node,considered result feild is `solana-core` from `getVersion` method.
+    Node Version: Returns the current koii version running on the node,considered result feild is `koii-core` from `getVersion` method.
 
     Node Health: Checking whether the node is running or not. Will get the result from the method `getHealth` and consider the result accordingly. If the result field is `ok` then it marked as *UP* or else *DOWN*.
 
@@ -32,7 +32,7 @@
    
     Validator status: If the valiadtor is a non-deliquent and Epochvoteaccount is true and active stake is non-zero then validator is **voting**, otherwise considered as **delinquent**. Will be getting epochvoteaccount and activestake by calling the method `getVoteAccounts`.
 
-    Solana Current slot height: Returns the current slot the node is processing, calculated by calling method `getSlot`.
+    Koii Current slot height: Returns the current slot the node is processing, calculated by calling method `getSlot`.
 
     Block Height - Network: The latest block height of network, considered result field is `blockHeight` which we can get from the method `getEpochInfo`.
 
@@ -46,9 +46,9 @@
 
     Vote Height Difference: Calculated by subratcting validator's vote height from network's vote height.
 
-    Skip Rate-Validator: Skip rate of the validator which will be calculated by calling solana client binary `solana validators`. From the set of validators will compare the configured public key and if it matches then will store the data.
+    Skip Rate-Validator: Skip rate of the validator which will be calculated by calling koii client binary `koii validators`. From the set of validators will compare the configured public key and if it matches then will store the data.
 
-    Skip Rate-Network: Skip rate of the network will be calculated by getting considering all the skip rate of the the validators in the network. Will get the data by executing the command `solana validators`.
+    Skip Rate-Network: Skip rate of the network will be calculated by getting considering all the skip rate of the the validators in the network. Will get the data by executing the command `koii validators`.
 
     Skip Rate-Difference: Calculated by subtracting validator's skip rate from network's skip rate.
 
@@ -89,7 +89,7 @@
 
 - **Extra Information**
 
-   Solana Slot Leader: Leader of the current slot, result got from the method `getSlotLeader`.
+   Koii Slot Leader: Leader of the current slot, result got from the method `getSlotLeader`.
 
    Current Active Validators: Calculated from the method `getVoteAccounts`, which returns array of current and delinquent validators. From that considered current active validators as sum of the active validators, i.e validators who are voting.
     
@@ -97,6 +97,6 @@
   
    Validator Last Voted: Most recent slot voted by the validator, considered result field is `LastVote` from the method `getVoteAccounts`.
 
-   Solana Confirmed Slot Height: Current slot height,considered result feild is `AbsoluteSlot` from the method `getEpochInfo`.
+   Koii Confirmed Slot Height: Current slot height,considered result feild is `AbsoluteSlot` from the method `getEpochInfo`.
    
    Validator Root slot: Root slot of the validator, which we can get from the method `getVoteAccounts`.

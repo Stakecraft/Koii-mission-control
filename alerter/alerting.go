@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Chainflow/solana-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/config"
 )
 
 // SendTelegramAlert sends the alert to telegram account

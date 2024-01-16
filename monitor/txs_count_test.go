@@ -3,7 +3,7 @@ package monitor
 import (
 	"testing"
 
-	"github.com/Chainflow/solana-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/config"
 )
 
 func TestTxCount(t *testing.T) {

@@ -1,6 +1,6 @@
 ## 1 - Install Prerequisites
 
-- **Solana Client Binary**
+- **Koii Client Binary**
 - **Go 1.14.x+**
 - **Grafana 7.x+**
 - **Prometheus**
@@ -8,12 +8,12 @@
 
 ### Prerequisite Installation
 
- - Solana Client Binary Installation 
+ - Koii Client Binary Installation 
 
-   Before installing prerequisites make sure to have solana client binary installed.
-   - If you haven't installed it before, follow [this guide](https://docs.solana.com/cli/install-solana-cli-tools#download-prebuilt-binaries) to install the prebuilt binaries of latest version.
+   Before installing prerequisites make sure to have koii client binary installed.
+   - If you haven't installed it before, follow [this guide](https://docs.koii.network/run-a-node/k2-validators/system-setup) to install the prebuilt binaries of latest version.
 
-   To learn more about solana client binary usage [click here](https://github.com/Chainflow/solana-mission-control/blob/main/docs/prereq-manual.md#install-solana-client).
+   To learn more about koii client binary usage [click here](https://github.com/Stakecraft/koii-mission-control/blob/main/docs/prereq-manual.md#install-solana-client).
 
  - Install other prerequisites
 
@@ -56,7 +56,7 @@
 
 To manually install the prerequisites please follow this [guide](./docs/prereq-manual.md).
  
-## Install and configure the Solana Monitoring Tool
+## Install and configure the Koii Monitoring Tool
 
 There are two ways of installing the tool:-
 
@@ -90,13 +90,13 @@ Either of the two methods can be used to install the tool. It is not necessary t
 ```
 You can check the logs of tool using:
 ```sh
-   journalctl -u solana_mc.service -f
+   journalctl -u koii_mc.service -f
 ```
 ### 2) Manual installation
 
 ```bash
-$ git clone https://github.com/Chainflow/solana-mission-control
-$ cd solana-mission-control
+$ git clone https://github.com/Stakecraft/koii-mission-control
+$ cd koii-mission-control
 $ cp example.config.toml config.toml
 ```
 
@@ -109,10 +109,10 @@ Note : Before running this monitoring binary, you need to add the following conf
 ```sh
  scrape_configs:
 
-  - job_name: 'solana'
+  - job_name: 'koii'
 
     static_configs:
-    - targets: ['localhost:1234']
+    - targets: ['localhost:5678']
 
 ```
 
@@ -123,45 +123,45 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart prometheus.service
 ```
 
-If you wish to pass `solana binary path` then you export by following below step.
+If you wish to pass `koii binary path` then you export by following below step.
 ```sh
-export SOLANA_BINARY_PATH="<solana-client-binary-path>" # Ex - export SOLANA_BINARY_PATH="/home/ubuntu/.local/share/solana/install/active_release/bin/solana"
+export KOII_BINARY_PATH="<koii-client-binary-path>" # Ex - export KOII_BINARY_PATH="/home/ubuntu/.local/share/koii/install/active_release/bin:$PATH"
 ```
 
 - Build and run the monitoring binary
 
 ```sh
-   $ go build -o solana-mc && ./solana-mc
+   $ go build -o koii-mc && ./koii-mc
 ```
 
 - Run monitoring tool as a system service
 
 Follow below steps to create a system service file and to start it.
-Before running this make sure to export the `$SOLANA_BINARY_PATH`.
+Before running this make sure to export the `$KOII_BINARY_PATH`.
 
 ```sh
 echo "[Unit]
-Description=Solana-mc
+Description=koii-mc
 After=network-online.target
 
 [Service]
 User=$USER
-Environment="SOLANA_BINARY_PATH=$SOLANA_BINARY_PATH"
-ExecStart=$HOME/go/bin/solana-mc
+Environment="KOII_BINARY_PATH=$KOII_BINARY_PATH"
+ExecStart=$HOME/go/bin/koii-mc
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
 
 [Install]
-WantedBy=multi-user.target" | sudo tee "/lib/systemd/system/solana_mc.service"
+WantedBy=multi-user.target" | sudo tee "/lib/systemd/system/koii_mc.service"
 ```
 - Run the system service file
 ```sh
 sudo systemctl daemon-reload
 
-sudo systemctl enable solana_mc.service
+sudo systemctl enable koii_mc.service
 
-sudo systemctl start solana_mc.service
+sudo systemctl start koii_mc.service
 ````
 
 Installation of the tool is completed let's configure the grafana dashboards.

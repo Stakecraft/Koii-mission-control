@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Chainflow/solana-mission-control/alerter"
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/querier"
-	"github.com/Chainflow/solana-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/alerter"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/querier"
+	"github.com/Stakecraft/koii-mission-control/types"
 )
 
 // GetIdentityBalance returns the balance of the identity account

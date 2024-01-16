@@ -9,19 +9,19 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/Chainflow/solana-mission-control/alerter"
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/monitor"
-	"github.com/Chainflow/solana-mission-control/querier"
-	"github.com/Chainflow/solana-mission-control/types"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/alerter"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/monitor"
+	"github.com/Stakecraft/koii-mission-control/querier"
+	"github.com/Stakecraft/koii-mission-control/types"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 const (
 	httpTimeout = 5 * time.Second
 )
 
-// solanaCollector respresents a set of solana metrics
+// solanaCollector respresents a set of koii metrics
 type solanaCollector struct {
 	config                    *config.Config
 	totalValidatorsDesc       *prometheus.Desc
@@ -58,7 +58,7 @@ type solanaCollector struct {
 	identityAccBalance *prometheus.Desc
 }
 
-// NewSolanaCollector exports solana collector metrics to prometheus
+// NewSolanaCollector exports koii collector metrics to prometheus
 func NewSolanaCollector(cfg *config.Config) *solanaCollector {
 	return &solanaCollector{
 		config: cfg,
@@ -269,12 +269,12 @@ func (c *solanaCollector) mustEmitMetrics(ch chan<- prometheus.Metric, response 
 
 			// Check weather the validator is voting or not
 			if vote.EpochVoteAccount == false && vote.ActivatedStake <= 0 {
-				msg := "Solana validator is NOT VOTING"
+				msg := "Koii validator is NOT VOTING"
 				c.AlertValidatorStatus(msg, ch)
 
 				ch <- prometheus.MustNewConstMetric(c.valVotingStatus, prometheus.GaugeValue, 0, "Jailed")
 			} else {
-				msg := "Solana validator is VOTING"
+				msg := "Koii validator is VOTING"
 				c.AlertValidatorStatus(msg, ch)
 
 				ch <- prometheus.MustNewConstMetric(c.valVotingStatus, prometheus.GaugeValue, 1, "Voting")
@@ -311,13 +311,13 @@ func (c *solanaCollector) mustEmitMetrics(ch chan<- prometheus.Metric, response 
 				1, vote.VotePubkey, vote.NodePubkey)
 
 			// Send Telegram Alert
-			telegramErr := alerter.SendTelegramAlert(fmt.Sprintf("Your solana validator is in DELINQUENT state"), c.config)
+			telegramErr := alerter.SendTelegramAlert(fmt.Sprintf("Your Koii validator is in DELINQUENT state"), c.config)
 			if telegramErr != nil {
 				log.Printf("Error while sending vallidator status alert to telegram: %v", telegramErr)
 			}
 
 			// Send Email Alert
-			emailErr := alerter.SendEmailAlert(fmt.Sprintf("Your solana validator is in DELINQUNET state"), c.config)
+			emailErr := alerter.SendEmailAlert(fmt.Sprintf("Your Koii validator is in DELINQUNET state"), c.config)
 			if emailErr != nil {
 				log.Printf("Error while sending validator status alert to email: %v", emailErr)
 			}
@@ -395,7 +395,7 @@ func (c *solanaCollector) AlertValidatorStatus(msg string, ch chan<- prometheus.
 }
 
 // Collect get data from methods and exports metrics to prometheus. Those metrics are
-// 1. Solana version
+// 1. Koii version
 // 2. Identity account and Vote account balance
 // 3. slot Leader
 // 4. Confirmed block time of validator

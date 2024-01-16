@@ -4,7 +4,7 @@ import (
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 
-	"github.com/Chainflow/solana-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/config"
 )
 
 // SendEmail to send mail alert

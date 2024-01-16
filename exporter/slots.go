@@ -9,10 +9,10 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/Chainflow/solana-mission-control/alerter"
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/monitor"
-	"github.com/Chainflow/solana-mission-control/utils"
+	"github.com/Stakecraft/koii-mission-control/alerter"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/monitor"
+	"github.com/Stakecraft/koii-mission-control/utils"
 )
 
 const (
@@ -186,7 +186,7 @@ func (c *solanaCollector) WatchSlots(cfg *config.Config) {
 
 		balance.Set(float64(bal.Result.Value) / math.Pow(10, 9))
 
-		// Get skip rate of validator and network using solana cli command
+		// Get skip rate of validator and network using koii cli command
 		valSkip, netSkip, err := monitor.SkipRate(cfg)
 		if err != nil {
 			log.Printf("Error while getting skipped slots : %v", err)

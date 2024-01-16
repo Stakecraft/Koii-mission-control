@@ -9,9 +9,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/Chainflow/solana-mission-control/config"
-	"github.com/Chainflow/solana-mission-control/exporter"
-	"github.com/Chainflow/solana-mission-control/monitor"
+	"github.com/Stakecraft/koii-mission-control/config"
+	"github.com/Stakecraft/koii-mission-control/exporter"
+	"github.com/Stakecraft/koii-mission-control/monitor"
 )
 
 func main() {
