@@ -71,7 +71,7 @@ echo "
   - job_name: 'koii'
 
     static_configs:
-    - targets: ['localhost:1234']
+    - targets: ['localhost:5678']
 
 
   - job_name: 'node_exporter'

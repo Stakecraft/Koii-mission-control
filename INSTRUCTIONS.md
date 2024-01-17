@@ -17,14 +17,14 @@
 
  - Install other prerequisites
 
-   There are two ways of installing the prerequisites:-
+   <!-- There are two ways of installing the prerequisites:-
 
    1. Installation script
    2. Manual installation
 
-   Either of the two methods can be used to install the required prerequisites. It is not necessary to do both.
+   Either of the two methods can be used to install the required prerequisites. It is not necessary to do both.-->
 
-**1) Installation script**
+<!-- **1) Installation script**
 
    - Script downloads and installs grafana, prometheus and node exporter and starts the respective servers.
    - It also downloads go if it's not already installed.
@@ -34,7 +34,7 @@
    - Execute the script using the following command:
 
    ```sh
-   curl -s -L https://raw.githubusercontent.com/Chainflow/solana-mission-control/main/scripts/install_script.sh | bash
+   curl -s -L https://raw.githubusercontent.com/Stakecraft/koii-mission-control/main/scripts/install_script.sh | bash
    ```
    Source your `.bashrc` after executing the script
 
@@ -52,7 +52,7 @@
    journalctl -u node_exporter.service -f
    ```
 
-**2) Manual installation**
+**2) --> Manual installation**
 
 To manually install the prerequisites please follow this [guide](./docs/prereq-manual.md).
  
