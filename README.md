@@ -2,10 +2,6 @@
 
 Koii mission control provides a comprehensive set of metrics and alerts for koii validator  operators. We utilized the power of Grafana + Node exporter and extended the monitoring & alerting with a custom built go-server.
 
-We would like to express my gratitude to **Chainflow** for graciously providing the public Git repository for the Solana monitoring tool. We utilized it as a valuable reference while developing the Koii-mission-control monitoring
-
-See the full annoucement post, including screenshots from Chainflow team about Solana-mission-control, [here](https://chainflow.io/introducing-solana-mission-control/).
-
 ![Example](example_image.png)
 
 ### Getting Started
@@ -19,3 +15,6 @@ See the full annoucement post, including screenshots from Chainflow team about S
 
 
 
+We would like to express our gratitude to **Chainflow** for graciously providing the public Git repository for the Solana monitoring tool. We utilized it as a valuable reference while developing the Koii-mission-control monitoring
+
+See the full annoucement post, including screenshots from Chainflow team about Solana-mission-control, [here](https://chainflow.io/introducing-solana-mission-control/).
