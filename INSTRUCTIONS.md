@@ -58,7 +58,7 @@ To manually install the prerequisites please follow this [guide](./docs/prereq-m
  
 ## Install and configure the Koii Monitoring Tool
 
-There are two ways of installing the tool:-
+<!-- There are two ways of installing the tool:-
 
 1. Installation script
 2. Manual installation
@@ -92,7 +92,7 @@ You can check the logs of tool using:
 ```sh
    journalctl -u koii_mc.service -f
 ```
-### 2) Manual installation
+### 2) -->Manual installation
 
 ```bash
 $ git clone https://github.com/Stakecraft/koii-mission-control

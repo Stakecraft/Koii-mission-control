@@ -4,6 +4,8 @@ Koii mission control provides a comprehensive set of metrics and alerts for koii
 
 See the full annoucement post, including screenshots, [here](https://chainflow.io/introducing-solana-mission-control/).
 
+![Example](example_image.png)
+
 ### Getting Started
 
  - [Click here](./INSTRUCTIONS.md) to find the instructions to install the tool. 
